@@ -267,6 +267,19 @@ function ImagePanel({
 
   return (
     <div className="flex flex-col gap-3">
+      {/* Hidden file input — always in DOM so ref works for re-upload */}
+      <input
+        ref={inputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) onUpload(file);
+          e.target.value = "";
+        }}
+      />
+
       {/* Preview */}
       <div
         className="relative rounded-2xl overflow-hidden flex items-center justify-center"
@@ -316,16 +329,6 @@ function ImagePanel({
               <Upload size={20} style={{ color: accent }} />
             </div>
             <span className="text-xs">点击上传图片</span>
-            <input
-              ref={inputRef}
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) onUpload(file);
-              }}
-            />
           </label>
         )}
       </div>

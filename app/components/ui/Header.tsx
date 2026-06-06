@@ -19,7 +19,7 @@ export default function Header({ taskBarOpen, onToggleTaskBar }: HeaderProps) {
       <header
         className="h-12 flex items-center justify-between px-4 flex-shrink-0"
         style={{
-          background: "var(--surface)",
+          background: "#f0f0f5",
           borderBottom: "1px solid var(--border)",
         }}
       >
