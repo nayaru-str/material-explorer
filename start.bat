@@ -3,7 +3,7 @@ chcp 65001 >nul
 title Material Explorer 启动器
 
 echo ================================================
-echo   Material Explorer
+echo   Material Explorer 启动器
 echo   前端: http://localhost:3000
 echo   SAM 服务: http://localhost:8080
 echo ================================================
